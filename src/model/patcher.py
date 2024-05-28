@@ -11,4 +11,4 @@ def patch_config(
         init_kwargs: Dict[str, Any],
         is_trainable:bool,
 ):
-    configure_quantization(config, tokenizer, model_args, init_kwargs)
+    configure_quantization(config, model_args, init_kwargs)
