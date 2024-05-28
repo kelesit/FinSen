@@ -48,3 +48,11 @@ class FinetuningArguments(LoraArguments):
             "help": "The stage of fine-tuning. Choose from sft, dpo, or orpo."
         }
     )
+
+    def __post_init__(self):
+        def split_arg(arg):
+            if isinstance(arg, str):
+                return [item.strip() for item in arg.split(",")]
+            return arg
+
+        self.lora_target = split_arg(self.lora_target)

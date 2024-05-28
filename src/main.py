@@ -20,10 +20,12 @@ from peft import (
 )
 from peft.utils import TRANSFORMERS_MODELS_TO_LORA_TARGET_MODULES_MAPPING
 
-from data import tfns_train_data, save_dataset, preprocess
-from tools import print_trainable_parameters
-from trainer import ModifiedTrainer
-from data.data_collator import ModifiedDataCollator
+# from data import tfns_train_data, save_dataset, preprocess
+# from tools import print_trainable_parameters
+
+from .train.sft.trainer import SFTTrainer
+
+from .data.data_collator import ModifiedDataCollator
 
 from torch.utils.tensorboard import SummaryWriter
 from transformers.integrations import TensorBoardCallback
@@ -136,7 +138,7 @@ def main():
 
     ## Training    
     writer = SummaryWriter()
-    trainer = ModifiedTrainer(
+    trainer = SFTTrainer(
         model=model,
         tokenizer=tokenizer,
         args=training_args,             # Trainer args
