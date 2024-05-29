@@ -1,0 +1,10 @@
+transformers>=4.37.2
+datasets>=2.14.3
+accelerate>=0.27.2
+peft>=0.10.0
+trl>=0.8.1
+bitsandbytes
+sentencepiece
+nltk
+jieba
+rouge-chinese
