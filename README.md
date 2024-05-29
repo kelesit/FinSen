@@ -4,8 +4,16 @@
 
 ## 2. 数据集
 本项目使用的数据集为金融相关的推特文本数据集zeroshot/twitter-financial-news-sentiment，数据集包含了推特文本以及对应的情感标签。
-有两个部分：训练集和验证集，其中训练集包含了9938条推特文本，验证集包含了2486条推特文本。
+数据集分为：训练集和验证集，其中训练集包含了9938条推特文本，验证集包含了2486条推特文本。
 
 ## 3. 项目运行
-### 3.1 环境要求
+### 微调模型
+```bash
+python3 -m src.finsen ChatGLM3_loftq.yaml
+```
 
+### benchmark
+```bash
+cd src/benchmark
+python3 benchmark.py
+```

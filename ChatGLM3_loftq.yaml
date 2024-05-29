@@ -28,6 +28,8 @@ weight_decay: 0.01
 # lr_scheduler_type: cosine
 warmup_steps: 1000
 fp16: true
+load_best_model_at_end: True
+remove_unused_columns: False
 
 ### eval
 val_size: 0.2
